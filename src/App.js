@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect,useState } from 'react';
-import axios from 'axios'
+import Axios from "./Axios"
 function App() {
 const[myData,setMyData] = useState([]);
 const[isError,setIsError]= useState("")
@@ -20,7 +20,7 @@ const[isError,setIsError]= useState("")
 
   const getApiData = async ()=>{
     try {
-      const resp = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const resp = await Axios.get("/posts");
       setMyData(resp.data)
     } catch (error) {
       setIsError(error.message)

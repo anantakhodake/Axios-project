@@ -6,15 +6,30 @@ function App() {
 const[myData,setMyData] = useState([]);
 const[isError,setIsError]= useState("")
   // using Promises
+  // useEffect(()=>{
+  //   axios.get("https://jsonplaceholder.typicode.com/posts")
+  //   .then((resp)=>
+  //   setMyData(resp.data)
+  //   )
+  //   .catch((error)=>
+  //   setIsError(error.message)
+  //   );
+  // },[]);
+
+  // Using Async Await function
+
+  const getApiData = async ()=>{
+    try {
+      const resp = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      setMyData(resp.data)
+    } catch (error) {
+      setIsError(error.message)
+    }
+   
+  }
   useEffect(()=>{
-    axios.get("https://jsonplaceholder.typicode.com/posts")
-    .then((resp)=>
-    setMyData(resp.data)
-    )
-    .catch((error)=>
-    setIsError(error.message)
-    );
-  },[]);
+    getApiData()
+  })
   return (
     <>
     <center><h2 style={{fontSize:"45px"}}>Axios Tutorial</h2></center> 

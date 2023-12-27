@@ -36,6 +36,7 @@ const[isError,setIsError]= useState("")
     {isError!== ""&& <h2>{isError}</h2>}
     <div className='grid'>
     {myData.map((post)=>{
+      // destructure the object
       const {id,title,body} = post;
       return <div className='card' key={id}>
         <h2>{title}</h2>

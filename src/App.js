@@ -27,6 +27,7 @@ const[isError,setIsError]= useState("")
     }
    
   }
+  // use of useeffect hook 
   useEffect(()=>{
     getApiData()
   })

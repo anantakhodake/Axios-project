@@ -32,7 +32,7 @@ const[isError,setIsError]= useState("")
   })
   return (
     <>
-    <center><h2 style={{fontSize:"45px"}}>Axios Tutorial</h2></center> 
+    <center><h2 style={{fontSize:"45px", color:"blue"}}>Axios Tutorial</h2></center> 
     {isError!== ""&& <h2>{isError}</h2>}
     <div className='grid'>
     {myData.map((post)=>{

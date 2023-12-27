@@ -16,7 +16,7 @@ const[isError,setIsError]= useState("")
   //   );
   // },[]);
 
-  // Using Async Await function
+  // Using Async Await function to fetch api
 
   const getApiData = async ()=>{
     try {
